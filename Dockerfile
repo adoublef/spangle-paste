@@ -15,9 +15,12 @@ FROM base AS test
 RUN go test -v -cover -count 1 ./...
 
 FROM base AS build
-RUN GOOS=linux GOARCH=amd64 go build \
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
     -ldflags "-w -s" \
+    -buildvcs=false \
     -o /usr/bin/a ./cmd/spangle-paste/*.go
+
+# do something
 
 FROM gcr.io/distroless/${DISTROLESS} AS final
 WORKDIR /opt
