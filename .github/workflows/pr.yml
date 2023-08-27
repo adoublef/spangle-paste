@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  unit:
+  test:
     runs-on: ubuntu-22.04
     timeout-minutes: 30
     environment: development
