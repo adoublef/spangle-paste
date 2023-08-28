@@ -33,6 +33,6 @@ func (s *Service) routes() {
 			name = "World"
 		}
 
-		fmt.Fprintf(w, "Hello, %s!", name)
+		fmt.Fprintf(w, "Ciao, %s!", name)
 	})
 }
