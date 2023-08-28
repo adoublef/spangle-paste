@@ -12,6 +12,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      -
+        name: 🚚 Checkout Repository
+        uses: actions/checkout@v3
+      - 
+        name: 🐹 Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.21
+          cache: false
+      -
+        name: 🧵 Use Linter
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.54
   test:
     runs-on: ubuntu-22.04
     timeout-minutes: 30
