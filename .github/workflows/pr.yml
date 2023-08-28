@@ -34,8 +34,6 @@ jobs:
           context: .
           tags: ${{ github.run_id }}
           target: test
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
   build:
     runs-on: ubuntu-22.04
     timeout-minutes: 30
@@ -58,5 +56,3 @@ jobs:
             context: .
             tags: ${{ github.run_id }}
             target: build
-            cache-from: type=gha
-            cache-to: type=gha,mode=max
