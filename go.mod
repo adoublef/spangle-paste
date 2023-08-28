@@ -3,7 +3,7 @@ module github.com/adoublef/spangle-paste
 go 1.21.0
 
 require (
-	github.com/rs/zerolog v1.29.1
+	github.com/rs/zerolog v1.30.0
 	github.com/stretchr/testify v1.8.4
 )
 
